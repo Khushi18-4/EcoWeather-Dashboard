@@ -1,0 +1,223 @@
+/* ==========================================================================
+   1. ECO-NATURE COLOR SYSTEM & RESET
+   ========================================================================== */
+:root {
+    --forest-deep: #142821;
+    --leaf-green: #2d6a4f;
+    --mint-light: #d8f3dc;
+    --earth-sand: #f4f1de;
+    --glass-bg: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --text-light: #f8fafc;
+    --text-dim: #b7e4c7;
+    --transition-base: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(135deg, #0b1d17 0%, #1b4332 50%, #2d6a4f 100%);
+    color: var(--text-light);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* ==========================================================================
+   2. MAIN DASHBOARD CONTAINER & TYPOGRAPHY
+   ========================================================================== */
+.dashboard-container {
+    background: rgba(20, 40, 33, 0.65);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    width: 100%;
+    max-width: 600px;
+    border-radius: 32px;
+    border: 1px solid var(--glass-border);
+    padding: 40px 30px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 var(--glass-border);
+}
+
+.nature-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.nature-header h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: var(--text-light);
+    text-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.nature-header p {
+    font-size: 0.95rem;
+    color: var(--text-dim);
+    margin-top: 6px;
+}
+
+/* ==========================================================================
+   3. RESPONSIVE FORMS & SEARCH MODULES
+   ========================================================================== */
+.search-area form {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+#city-input {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.2);
+    border: 2px solid var(--glass-border);
+    padding: 16px 24px;
+    border-radius: 16px;
+    color: white;
+    font-size: 1rem;
+    transition: var(--transition-base);
+}
+
+#city-input:focus {
+    outline: none;
+    border-color: #52b788;
+    background: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 20px rgba(82, 183, 136, 0.2);
+}
+
+#search-btn {
+    background: var(--leaf-green);
+    color: white;
+    border: none;
+    padding: 0 28px;
+    border-radius: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition-base);
+    box-shadow: 0 4px 15px rgba(45, 106, 79, 0.3);
+}
+
+#search-btn:hover {
+    background: #40916c;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(45, 106, 79, 0.5);
+}
+
+/* ==========================================================================
+   4. WEATHER OUTPUT & NESTED GRID SYSTEMS
+   ========================================================================== */
+.main-card {
+    text-align: center;
+    padding: 30px 20px;
+    background: var(--glass-bg);
+    border-radius: 24px;
+    border: 1px solid var(--glass-border);
+    margin-bottom: 25px;
+}
+
+#location-name {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.temp-display {
+    font-size: 4.5rem;
+    font-weight: 900;
+    line-height: 1;
+    margin: 15px 0;
+    letter-spacing: -2px;
+    color: var(--earth-sand);
+}
+
+.temp-display .unit {
+    font-size: 2rem;
+    font-weight: 500;
+    vertical-align: super;
+    color: var(--text-light);
+}
+
+#weather-condition {
+    color: var(--text-dim);
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+/* Advanced 2-Dimensional Layout for Metrics */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.metric-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--glass-border);
+    padding: 20px 10px;
+    border-radius: 20px;
+    text-align: center;
+    transition: var(--transition-base);
+}
+
+.metric-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-5px);
+    border-color: #52b788;
+}
+
+.metric-icon {
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+}
+
+.metric-card h3 {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 5px;
+}
+
+.metric-card p {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--earth-sand);
+}
+
+/* ==========================================================================
+   5. UTILITY & STATES CLASSES (ERRORS, LOADERS)
+   ========================================================================== */
+.error-box {
+    background: rgba(230, 57, 70, 0.15);
+    border: 1px solid rgba(230, 57, 70, 0.3);
+    color: #ffb7b2;
+    padding: 16px;
+    border-radius: 14px;
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.loader {
+    text-align: center;
+    padding: 30px;
+    color: var(--text-dim);
+    font-style: italic;
+    font-weight: 600;
+}
+
+.hidden { display: none !important; }
+
+/* Responsive Switch */
+@media (max-width: 480px) {
+    .metrics-grid {
+        grid-template-columns: 1fr; /* Mobile view defaults to stacked stacks */
+    }
+}

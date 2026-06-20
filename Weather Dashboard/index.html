@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nature Weather Dashboard | Live Metrics</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="dashboard-container">
+        <header class="nature-header">
+            <h1>EcoWeather</h1>
+            <p>Real-time atmospheric insights aligned with nature</p>
+        </header>
+
+        <section class="search-area" aria-label="City Search">
+            <form id="search-form">
+                <input type="text" id="city-input" placeholder="Enter city name (e.g., Delhi, London)..." required autocomplete="off">
+                <button type="submit" id="search-btn">Sync Nature</button>
+            </form>
+        </section>
+
+        <div id="error-message" class="error-box hidden" role="alert"></div>
+
+        <section id="weather-result" class="weather-result hidden">
+            <div class="main-card">
+                <h2 id="location-name">City, Country</h2>
+                <div class="temp-display">
+                    <span id="current-temp">--</span><span class="unit">°C</span>
+                </div>
+                <p id="weather-condition">Condition details appear here</p>
+            </div>
+
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-icon">💧</div>
+                    <h3>Humidity</h3>
+                    <p id="metric-humidity">-- %</p>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">💨</div>
+                    <h3>Wind Speed</h3>
+                    <p id="metric-wind">-- km/h</p>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">🌿</div>
+                    <h3>Apparent Temp</h3>
+                    <p id="metric-apparent">-- °C</p>
+                </div>
+            </div>
+        </section>
+
+        <div id="loader" class="loader hidden">Reading global atmosphere...</div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
