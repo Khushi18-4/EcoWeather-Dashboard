@@ -38,5 +38,3 @@ Weather Dashboard/
 ├── index.html       # Semantic HTML5 layout architecture
 ├── style.css        # Glassmorphic botanical stylesheet
 ├── script.js        # Asynchronous API and state handler
-└── assets/
-    └── screenshot.png   # Project interface preview image
